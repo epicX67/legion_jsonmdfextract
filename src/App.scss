@@ -1,2 +1,118 @@
 
+.App {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    margin-top: 4rem;
+}
 
+.disabled {
+    pointer-events: none;
+    opacity: .5;
+}
+
+.topBar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    width: calc(100% - 2rem);
+    background: #d8e3ff;
+    border: 1px solid #83a6fd;
+    height: 2rem;
+    z-index: -1;
+}
+
+.mainCont {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.281);
+    z-index: 11;
+    width: max-content;
+
+    .row {
+        display: flex;
+        flex-direction: row;
+
+        .item {
+            width: 5rem;
+            min-width: 5rem;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.281);
+            padding: .3rem 1rem;
+        }
+        .item.big {
+            width: 100% !important;
+            text-align: center;
+            &:hover {
+                background: #83a6fd;
+            }
+        }
+        .row-action-bar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: .1rem;
+        }
+    }
+
+    .row.header{
+        position: sticky;
+        top: 0;
+        .item {
+            position: relative;
+            font-weight: 600;
+            background: #cddafc;
+            border: 1px solid rgba(0, 0, 0, 0.301);
+
+            p{
+                margin: 0;
+                padding: 0;
+            }
+
+            &:hover {
+                .column-action-bar{
+                    display: flex;
+                }
+            }
+
+            .column-action-bar{
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 100%;
+                width: calc(100% - 2rem);
+                background: #375fc5;
+                padding: .4rem;
+                border-radius: .2rem;
+
+                display: none;
+                flex-direction: column;
+                gap: .4rem;
+                
+                button {
+                    border: none;
+                    width: 100%;
+                    padding: .5rem 1rem;
+                    background: #ffffff3c;
+                    color: white;
+                    border-radius: 2px;
+
+                    &:hover {
+                        background: white;
+                        color: #375fc5;
+                    }
+                }
+
+                &:hover {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
