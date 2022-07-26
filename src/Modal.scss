@@ -1,0 +1,33 @@
+.modal {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.466);
+    display: grid;
+    place-items: center;
+
+    .dialog-box {
+        width: auto;
+        height: max-content;
+        min-width: 10rem;
+        background: white;
+
+        padding: 1rem;
+        border-radius: 7px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        p {
+            padding-bottom: 0;
+            margin: 0;
+        }
+
+        div {
+            display: flex;
+            gap: 1rem;
+        }
+    }
+}
