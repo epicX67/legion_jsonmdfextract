@@ -104,13 +104,14 @@ function App() {
   return (
     <div className="App">
       <div className="topBar">
-        <img className="logo" src={logo}></img>
+        <img alt="logo" className="logo" src={logo}></img>
         <input
           onChange={(e) => setUrl(e.target.value)}
           value={url}
           placeholder="Enter Url"
           name="url"
           type="text"
+          className="url"
         ></input>
         <button onClick={() => fetch(url)}>Load</button>
         <button>Extract</button>
@@ -169,12 +170,12 @@ function App() {
                 className="item"
               ></input>
             ))}
-            <div className="row-action-bar">
+            <div className="item row-action-bar">
               <input
                 onClick={() => removeRow(rkey)}
                 key={rkey + "remove"}
                 type="button"
-                value="Delete"
+                value="X"
               ></input>
               <input
                 className={rkey !== 0 ? "" : "disabled"}
