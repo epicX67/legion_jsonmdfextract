@@ -43,7 +43,14 @@ export default function RenameColumn({
             placeholder="Enter new column name"
           ></input>
           <div>
-            <button onClick={() => wannaShow(false)}>Cancel</button>
+            <button
+              onClick={() => {
+                set("");
+                wannaShow(false);
+              }}
+            >
+              Cancel
+            </button>
             <button
               className={isValid ? "" : "disabled"}
               onClick={() => {
