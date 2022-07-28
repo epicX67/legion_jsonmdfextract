@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import NewColumn from "./NewColumn";
 import RenameColumn from "./RenameColumn";
+import logo from "./logo.png";
 
 function App() {
   const [url, setUrl] = useState("");
@@ -103,6 +104,7 @@ function App() {
   return (
     <div className="App">
       <div className="topBar">
+        <img className="logo" src={logo}></img>
         <input
           onChange={(e) => setUrl(e.target.value)}
           value={url}
