@@ -103,7 +103,7 @@ function App() {
         <button onClick={() => fetch(url)}>Load</button>
         <button>Extract</button>
         <button onClick={() => setShowColumnModal(true)}>Add column</button>
-        <p className="errMsg">Error Here</p>
+        {/* <p className="errMsg">Error Here</p> */}
       </div>
       <div className="mainCont">
         <div className="row header">
