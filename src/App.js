@@ -44,8 +44,8 @@ function App() {
     const newColumnSet = columns.map((item) => item);
     newColumnSet[i] = column;
 
-    setColumns(newColumnSet);
-    setRows(newRows);
+    setColumns(newColumnSet.map((item) => item));
+    setRows(newRows.map((item) => item));
   };
 
   const removeColumn = (iii) => {
@@ -58,8 +58,8 @@ function App() {
     const newColumnSet = columns.map((item) => item);
     delete newColumnSet[i];
 
-    setColumns(newColumnSet);
-    setRows(newRows);
+    setColumns(newColumnSet.map((item) => item));
+    setRows(newRows.map((item) => item));
   };
 
   const addEmptyRow = () => {
@@ -73,7 +73,7 @@ function App() {
   const removeRow = (index) => {
     let newRows = rows.map((item) => item);
     delete newRows[index];
-    setRows(newRows);
+    setRows(newRows.map((item) => item));
   };
 
   const shiftRow = (index, up = true) => {
