@@ -86,6 +86,15 @@ function App() {
     setRows(newRows);
   };
 
+  const shiftColumn = (index, next = true) => {
+    const sindex = next ? index + 1 : index - 1;
+    let newColumns = columns.map((item) => item);
+    const temp = newColumns[sindex];
+    newColumns[sindex] = newColumns[index];
+    newColumns[index] = temp;
+    setColumns(newColumns);
+  };
+
   const changeCellValue = (index, column, value) => {
     const newRows = rows.map((item) => item);
     newRows[index][column] = value;
@@ -111,7 +120,22 @@ function App() {
           {columns.map((item, key) => (
             <div key={key} className="item">
               <p>{item}</p>
+
               <div className="column-action-bar">
+                <div>
+                  <button
+                    onClick={() => shiftColumn(key, false)}
+                    className={key === 0 ? "disabled" : ""}
+                  >
+                    {"<"}
+                  </button>
+                  <button
+                    onClick={() => shiftColumn(key, true)}
+                    className={key === columns.length - 1 ? "disabled" : ""}
+                  >
+                    {">"}
+                  </button>
+                </div>
                 <button
                   onClick={() => {
                     seteXColumn(item);

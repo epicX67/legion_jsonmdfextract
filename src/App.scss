@@ -81,6 +81,14 @@
                 }
             }
 
+            .action-next {
+                right: 0;
+            }
+
+            .action-prev {
+                left: 0;
+            }
+
             .column-action-bar{
                 position: absolute;
                 left: 50%;
@@ -94,6 +102,16 @@
                 display: none;
                 flex-direction: column;
                 gap: .4rem;
+
+                div {
+                    background: #ffffff3c;
+                    display: flex;
+                    flex-direction: row;
+
+                    button {
+                        background: transparent;
+                    }
+                }
                 
                 button {
                     border: none;
