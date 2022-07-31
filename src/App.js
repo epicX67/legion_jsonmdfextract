@@ -29,6 +29,23 @@ function App() {
       .catch((err) => setErr(err));
   };
 
+  const extract = () => {
+    const data = rows.map((item) => {
+      let obj = {};
+      columns.forEach((col) => {
+        obj[col] = item[col];
+      });
+      return obj;
+    });
+
+    const element = document.createElement("a");
+    const file = new Blob([JSON.stringify(data)], { type: "text/plain" });
+    element.href = URL.createObjectURL(file);
+    element.download = "myFile.txt";
+    document.body.appendChild(element); // Required for this to work in FireFox
+    element.click();
+  };
+
   const addColumn = () => {
     setColumns([...columns, column]);
     setColumn("");
@@ -114,7 +131,7 @@ function App() {
           className="url"
         ></input>
         <button onClick={() => fetch(url)}>Load</button>
-        <button>Extract</button>
+        <button onClick={() => extract()}>Extract</button>
         <button onClick={() => setShowColumnModal(true)}>Add column</button>
         {/* <p className="errMsg">Error Here</p> */}
       </div>
