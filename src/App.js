@@ -29,7 +29,7 @@ function App() {
       .catch((err) => setErr(err));
   };
 
-  const extract = () => {
+  const getMappedData = () => {
     const data = rows.map((item) => {
       let obj = {};
       columns.forEach((col) => {
@@ -37,13 +37,23 @@ function App() {
       });
       return obj;
     });
+    return JSON.stringify(data);
+  };
 
+  const extract = () => {
     const element = document.createElement("a");
-    const file = new Blob([JSON.stringify(data)], { type: "text/plain" });
+    const file = new Blob([JSON.stringify(getMappedData())], {
+      type: "text/plain",
+    });
     element.href = URL.createObjectURL(file);
     element.download = "myFile.txt";
     document.body.appendChild(element); // Required for this to work in FireFox
     element.click();
+  };
+
+  const copyToClipboard = () => {
+    const data = getMappedData();
+    navigator.clipboard.writeText(data);
   };
 
   const addColumn = () => {
@@ -132,6 +142,7 @@ function App() {
         ></input>
         <button onClick={() => fetch(url)}>Load</button>
         <button onClick={() => extract()}>Extract</button>
+        <button onClick={() => copyToClipboard()}>Copy to clipboard</button>
         <button onClick={() => setShowColumnModal(true)}>Add column</button>
         {/* <p className="errMsg">Error Here</p> */}
       </div>
