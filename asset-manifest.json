@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/jsonmdfextract/static/css/main.d2a5f449.css",
-    "main.js": "/jsonmdfextract/static/js/main.03ec2a60.js",
-    "static/media/logo.png": "/jsonmdfextract/static/media/logo.9919def54823c37865b7.png",
-    "index.html": "/jsonmdfextract/index.html",
-    "main.d2a5f449.css.map": "/jsonmdfextract/static/css/main.d2a5f449.css.map",
-    "main.03ec2a60.js.map": "/jsonmdfextract/static/js/main.03ec2a60.js.map"
+    "main.css": "/legion_jsonmdfextract/static/css/main.bb25bc98.css",
+    "main.js": "/legion_jsonmdfextract/static/js/main.a77761ac.js",
+    "static/media/logo.png": "/legion_jsonmdfextract/static/media/logo.2dc1dec8af8de5156382.png",
+    "static/media/list.png": "/legion_jsonmdfextract/static/media/list.2dd72d1b0369cb0b3174.png",
+    "index.html": "/legion_jsonmdfextract/index.html",
+    "main.bb25bc98.css.map": "/legion_jsonmdfextract/static/css/main.bb25bc98.css.map",
+    "main.a77761ac.js.map": "/legion_jsonmdfextract/static/js/main.a77761ac.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2a5f449.css",
-    "static/js/main.03ec2a60.js"
+    "static/css/main.bb25bc98.css",
+    "static/js/main.a77761ac.js"
   ]
 }
