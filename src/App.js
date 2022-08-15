@@ -4,6 +4,9 @@ import { useState } from "react";
 import NewColumn from "./NewColumn";
 import RenameColumn from "./RenameColumn";
 import logo from "./logo.png";
+import list from "./res/list.png";
+import add from "./res/add.png";
+import analytics from "./res/analytics.png";
 
 function App() {
   const [url, setUrl] = useState("");
@@ -130,8 +133,31 @@ function App() {
   };
   return (
     <div className="App">
+      <div className="sidebar">
+        <div className="header">
+          <img className="sidebarLogo" src={logo} alt="logo" />
+          <div>LEGiON</div>
+        </div>
+        <div className="menuSection">
+          <div className="headTitle">Administration</div>
+          <div className="menuItem">
+            <img src={list} alt="list" />
+            <div className="title">Game list</div>
+          </div>
+        </div>
+        <div className="menuSection">
+          <div className="headTitle">General</div>
+          <div className="menuItem">
+            <img src={analytics} alt="analytics" />
+            <div className="title">Analytics</div>
+          </div>
+          <div className="menuItem">
+            <img src={add} alt="add" />
+            <div className="title">Add game</div>
+          </div>
+        </div>
+      </div>
       <div className="topBar">
-        <img alt="logo" className="logo" src={logo}></img>
         <input
           onChange={(e) => setUrl(e.target.value)}
           value={url}

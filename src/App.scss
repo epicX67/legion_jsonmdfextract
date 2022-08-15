@@ -17,6 +17,71 @@
     height: 3rem;
 }
 
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15rem;
+    height: 100vh;
+    background: #2e3138;
+    z-index: 111111;
+
+    display: flex;
+    flex-direction: column;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        width: calc(100% - 2rem);
+        padding: 1rem;
+        .sidebarLogo {
+            width: 1.8rem;
+        }
+
+        div {
+            color: white;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+        }
+    }
+
+    .menuSection {
+        background: #32353d;
+        color: white;
+        .headTitle {
+            padding: .5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .menuItem {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            padding: 1rem .5rem;
+            background: #40444e;
+            user-select: none;
+            cursor: pointer;
+            img {
+                width: 1.5rem;
+                filter: invert(1);
+            }
+
+            div {
+                letter-spacing: 1px;
+            }
+
+            &:hover {
+                filter: brightness(1.2);
+            }
+        }
+    }
+}
+
 .topBar {
     position: fixed;
     top: 0;
@@ -27,9 +92,9 @@
     padding: 1rem;
     width: calc(100% - 2rem);
     background: var(--accent);
-    border: 1px solid #83a6fd;
     height: 2rem;
     z-index: -1;
+    margin-left: 15rem;
 
     .url, button {
         border: 0;
@@ -39,6 +104,10 @@
         color: white;
         letter-spacing: .03rem;
         outline: none;
+    }
+
+    button {
+        background: var(--accent2);
     }
 
     .url:focus-within, button:hover {
@@ -58,6 +127,7 @@
     border: 1px solid rgba(0, 0, 0, 0.281);
     z-index: 11;
     width: max-content;
+    margin-left: 15rem;
 
     $defaultOutline: 1px solid rgb(179, 179, 179);
 
@@ -72,7 +142,8 @@
         .item {
             width: 5rem;
             min-width: 5rem;
-            background: white;
+            background: #1E2235;
+            color: white;
             outline: $defaultOutline;
             padding: .3rem .5rem;
             border: none;
@@ -80,20 +151,19 @@
 
             &:hover {
                 z-index: 11;
-                outline: 2px solid var(--accent);
+                outline: 2px solid var(--accent2);
             }
 
             &:focus-within {
                 z-index: 11;
-                outline: 2px solid var(--accent);
-                transform: scale(1.1);
+                outline: 2px solid var(--accent2);
             }
         }
         .item.big {
             width: 100% !important;
             text-align: center;
             &:hover {
-                background: var(--accent);
+                background: var(--accent2);
                 color: white;
 
                 z-index: unset;
@@ -114,7 +184,16 @@
             justify-content: space-evenly;
             gap: .1rem;
 
-            &:hover {
+            input {
+                background: var(--accent2);
+                color: white;
+            }
+
+            input[value='X'] {
+                background: red;
+            }
+
+            &:hover, &:focus-within {
                 z-index: unset;
                 outline: $defaultOutline;
                 transform: unset;

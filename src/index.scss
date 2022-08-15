@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #1E2235;
 }
 
 code {
@@ -13,7 +14,8 @@ code {
 }
 
 :root {
-  --accent: #217346;
-  --header-bg: #b7e2d0;
-  --header-bg2:#c4f1de;
+  --accent: #353B4D;
+  --accent2:rgb(98, 136, 248);
+  --header-bg: #353B4D;
+  --header-bg2:#3e4352;
 }
