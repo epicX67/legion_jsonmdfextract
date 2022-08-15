@@ -7,6 +7,7 @@ import logo from "./logo.png";
 import list from "./res/list.png";
 import add from "./res/add.png";
 import analytics from "./res/analytics.png";
+import NewGame from "./NewGame";
 
 function App() {
   const [url, setUrl] = useState("");
@@ -17,6 +18,7 @@ function App() {
   const [rows, setRows] = useState([]);
   const [showColumnModal, setShowColumnModal] = useState(false);
   const [showRenameColumnModal, setShowRenameColumnModal] = useState(false);
+  const [showNewGameModal, setShowNewGameModal] = useState(false);
 
   const fetch = (url) => {
     axios
@@ -131,6 +133,10 @@ function App() {
     newRows[index][column] = value;
     setRows(newRows);
   };
+
+  const addNewGame = (game) => {
+    setRows([...rows, game]);
+  };
   return (
     <div className="App">
       <div className="sidebar">
@@ -151,7 +157,7 @@ function App() {
             <img src={analytics} alt="analytics" />
             <div className="title">Analytics</div>
           </div>
-          <div className="menuItem">
+          <div className="menuItem" onClick={() => setShowNewGameModal(true)}>
             <img src={add} alt="add" />
             <div className="title">Add game</div>
           </div>
@@ -272,6 +278,12 @@ function App() {
         value={column}
         set={setColumn}
         action={renameColumn}
+      />
+      <NewGame
+        show={showNewGameModal}
+        wannaShow={setShowNewGameModal}
+        action={addNewGame}
+        columns={columns}
       />
     </div>
   );
