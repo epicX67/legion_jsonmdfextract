@@ -1,6 +1,6 @@
 import "./App.scss";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NewColumn from "./NewColumn";
 import RenameColumn from "./RenameColumn";
 import logo from "./logo.png";
@@ -19,6 +19,24 @@ function App() {
   const [showColumnModal, setShowColumnModal] = useState(false);
   const [showRenameColumnModal, setShowRenameColumnModal] = useState(false);
   const [showNewGameModal, setShowNewGameModal] = useState(false);
+
+  useEffect(() => {
+    setColumns([
+      "name",
+      "link",
+      "wideImage",
+      "tallImage",
+      "squareImage",
+      "circleImage",
+      "category",
+      "creator",
+      "date",
+      "gender",
+      "description",
+    ]);
+
+    addEmptyRow();
+  }, []);
 
   const fetch = (url) => {
     axios
