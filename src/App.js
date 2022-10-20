@@ -65,7 +65,7 @@ function App() {
 
   const extract = () => {
     const element = document.createElement("a");
-    const file = new Blob([JSON.stringify(getMappedData())], {
+    const file = new Blob([getMappedData()], {
       type: "text/plain",
     });
     element.href = URL.createObjectURL(file);
