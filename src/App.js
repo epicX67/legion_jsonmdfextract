@@ -46,7 +46,7 @@ function App() {
 
         if (!(data[0] instanceof Object)) throw new Error("Unsupported Format");
 
-        setColumns(Object.keys(data[0]));
+        setColumns(getColumns(data));
         setRows(data);
       })
       .catch((err) => setErr(err));
@@ -61,6 +61,21 @@ function App() {
       return obj;
     });
     return JSON.stringify(data);
+  };
+
+  const getColumns = (data) => {
+    let currColumns = [];
+    data.forEach((item) => {
+      let currKeys = Object.keys(item);
+
+      currKeys.forEach((item) => {
+        if (!currColumns.includes(item)) {
+          currColumns.push(item);
+        }
+      });
+    });
+
+    return currColumns;
   };
 
   const extract = () => {
@@ -86,7 +101,7 @@ function App() {
         const data = JSON.parse(value);
         if (!(data[0] instanceof Object)) throw new Error("Unsupported Format");
 
-        setColumns(Object.keys(data[0]));
+        setColumns(getColumns(data));
         setRows(data);
       })
       .catch((err) => setErr(err));
