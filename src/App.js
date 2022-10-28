@@ -79,6 +79,19 @@ function App() {
     navigator.clipboard.writeText(data);
   };
 
+  const importFromClipboard = () => {
+    navigator.clipboard
+      .readText()
+      .then((value) => {
+        const data = JSON.parse(value);
+        if (!(data[0] instanceof Object)) throw new Error("Unsupported Format");
+
+        setColumns(Object.keys(data[0]));
+        setRows(data);
+      })
+      .catch((err) => setErr(err));
+  };
+
   const addColumn = () => {
     setColumns([...columns, column]);
     setColumn("");
@@ -192,7 +205,8 @@ function App() {
         ></input>
         <button onClick={() => fetch(url)}>Load</button>
         <button onClick={() => extract()}>Extract</button>
-        <button onClick={() => copyToClipboard()}>Copy to clipboard</button>
+        <button onClick={() => copyToClipboard()}>Copy</button>
+        <button onDoubleClick={() => importFromClipboard()}>Inject</button>
         <button onClick={() => setShowColumnModal(true)}>Add column</button>
         {/* <p className="errMsg">Error Here</p> */}
       </div>
