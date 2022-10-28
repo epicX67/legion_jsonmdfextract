@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/legion_jsonmdfextract/static/css/main.fe467df5.css",
-    "main.js": "/legion_jsonmdfextract/static/js/main.4e3108b8.js",
+    "main.js": "/legion_jsonmdfextract/static/js/main.753e929d.js",
     "static/media/logo.png": "/legion_jsonmdfextract/static/media/logo.2dc1dec8af8de5156382.png",
     "static/media/list.png": "/legion_jsonmdfextract/static/media/list.2dd72d1b0369cb0b3174.png",
     "index.html": "/legion_jsonmdfextract/index.html",
     "main.fe467df5.css.map": "/legion_jsonmdfextract/static/css/main.fe467df5.css.map",
-    "main.4e3108b8.js.map": "/legion_jsonmdfextract/static/js/main.4e3108b8.js.map"
+    "main.753e929d.js.map": "/legion_jsonmdfextract/static/js/main.753e929d.js.map"
   },
   "entrypoints": [
     "static/css/main.fe467df5.css",
-    "static/js/main.4e3108b8.js"
+    "static/js/main.753e929d.js"
   ]
 }
